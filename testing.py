@@ -1,22 +1,45 @@
 def Grade_Converter(convert_to, **users):
     if convert_to == "letter_grade":
-        GPAresults = []
+        letterResults = []
         for user in users:
-            def getLetter(user):
-                if users["user"] < 40.00 and users["user"] >= 0:
-                    user_Score = "F"
-                elif users["user"] < 50 and users["user"] >= 40:
-                    user_Score = "E"
-                elif users["user"] >= 50 and users["user"] < 60:
-                    user_Score = "D"
-                elif users["user"] >=60 and users["user"] < 70:
-                    user_Score = "C"
-                elif users["user"] >= 70 and users["user"] < 85:
-                    user_score = "B"
-                elif users["user"] >= 85 and users["user"] < 100:
-                    user_Score = "A"
+            def getLetter(score):
+                if score < 40.00 and score >= 0:
+                    return "F"
+                elif score < 50 and score >= 40:
+                    return "E"
+                elif score >= 50 and score < 60:
+                    return "D"
+                elif score >=60 and score < 70:
+                    return "C"
+                elif score >= 70 and score < 85:
+                    return "B"
+                elif score >= 85 and score < 100:
+                    return "A"
                 else:
-                    user_Score = "Invalid Range"
-                GPAresults.append(user, user_Score)
-        return GPAresults
+                    return "Invalid Range"
+            studentScore = getLetter(users[user])
+            letterResults.append((user, studentScore))
+        return letterResults
+    elif convert_to == "gpa":
+        GPAResults = []
+        for user in users:
+            def gpaProcessing(score):
+                if score < 40.00 and score >= 0:
+                    return 1
+                elif score < 50 and score >= 40:
+                    return 1.5
+                elif score >= 50 and score < 60:
+                    return 2
+                elif score >=60 and score < 70:
+                    return 2.5
+                elif score >= 70 and score < 85:
+                    return 3
+                elif score >= 85 and score < 100:
+                    return 4
+                else:
+                    return "Invalid Range"
+            studentScore = gpaProcessing(users[user])
+            GPAResults.append((user, studentScore))
+        return GPAResults
+print(Grade_Converter(convert_to='gpa', Adam=62, Faiz=91))
 print(Grade_Converter(convert_to='letter_grade', Albert=90, Dwi=82, Syahdan=58, Veronica=84))
