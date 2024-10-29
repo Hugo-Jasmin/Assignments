@@ -17,6 +17,7 @@ for i in range(len(customer_id)):
 
 print(unique_idsonly)
 print(unique_id)
+print("test update")
 print(len(unique_idsonly))
 
 
