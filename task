@@ -1,0 +1,3 @@
+Non Graded ChallengeObjectiveThis Non Graded Challenge was created to evaluate the concept of OOP and Exception Handling  with the aim of:1.Able to perform Object Oriented Programming (OOP) by creating a library system with handling exception.
+
+Task Create a library catalog system using OOP. The system should allow users to add books to the catalog, search for books by title or author, and remove books from the catalog.Requirements:1.Each book should have a title, author, and unique identifier2.The system should provide the following functionality:●Adding a book to the catalog.●Searching for books by title or author.●Removing a book from the catalog.●Displaying all books in the catalog.3.Do the exception handling4
